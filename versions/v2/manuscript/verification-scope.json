@@ -1,0 +1,44 @@
+{
+  "schema_version": 1,
+  "note_id": "hexagon-perp-line-counterexamples",
+  "note_revision": 2,
+  "date": "2026-11-02",
+  "problem_ids": ["saniga-et-al-2025-hexagon-contextuality-generalization"],
+  "posing_source": {
+    "url": "https://arxiv.org/abs/2312.07738v3",
+    "doi": "10.22331/q-2025-01-20-1601",
+    "locator": "Section 4.4, page 20; arXiv v3 main.tex lines 735-744"
+  },
+  "evidence_url": "https://github.com/the-omega-institute/trureturing/blob/6715a5bea38a03c80f6c4da6de93fea88798f026/D5/S3/Quantum/Contextuality/PerpHyperplaneHexagonContextualityRefutation.lean",
+  "source_revision": "6715a5bea38a03c80f6c4da6de93fea88798f026",
+  "lean": {
+    "declaration_gid": "D5/S3/Quantum/Contextuality/PerpHyperplaneHexagonContextualityRefutation.result",
+    "claim_declaration": "D5.S3.Quantum.Contextuality.PerpHyperplaneHexagonContextualityRefutation.claim",
+    "result_declaration": "D5.S3.Quantum.Contextuality.PerpHyperplaneHexagonContextualityRefutation.result",
+    "source_path": "D5/S3/Quantum/Contextuality/PerpHyperplaneHexagonContextualityRefutation.lean",
+    "statement": "not claim",
+    "coverage": "Negation of the universal isotropic-line-family equality claim, using the fixed IIZ perp, positive contextuality degree at most 12, and hexagon intersection at least 15."
+  },
+  "written_proofs": [
+    "Exact degree 12 for every three-qubit perp by linear sections and signed Clifford transport.",
+    "Exact intersection 15 with every three-regular isotropic line family on all 63 points.",
+    "Arbitrary-pole degree identity d(C_p^(n)) = 4 d(L_(n-1)) for every n >= 2 and every nonzero p; in particular every four-qubit perp has degree 252 using d(L_3) = 63.",
+    "Characterization of optimal IIZ-perp assignments by their 16 linear sections and 15 pole lines.",
+    "Degree-1 19-line counterexample with intersection at least 3.",
+    "Upper-bound inequality from a satisfying assignment on the complement."
+  ],
+  "verification_program": {
+    "file": "verify.py",
+    "version": 2,
+    "sha256": "a0b4d421ba979da64259b90e7fa7ef3f4152aecbb73ed0fdd2483ab168ea9681",
+    "language": "Python 3.10 or later"
+  },
+  "finite_checks": [
+    "315 three-qubit isotropic lines and their signs by matrix products and binary phase exponents.",
+    "15 two-qubit lines, ten parity grids, and all 32768 two-qubit assignments.",
+    "31 perp points, 75 perp lines, 12 negative lines, 16 linear sections, and fourfold section coverage.",
+    "A classical coordinate model with 63 lines and intersection 15 at every one of 63 poles.",
+    "Canonical negative-line counts for all 63 three-qubit poles, including 12 at IIZ and 24 at YYY.",
+    "The 19-line union, its single negative line, and the six-line parity contradiction."
+  ]
+}

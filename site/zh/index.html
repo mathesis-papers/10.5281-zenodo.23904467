@@ -1,0 +1,15 @@
+<!doctype html>
+<html lang="zh"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>A degree-12 counterexample to Saniga et al.&#x27;s Section 4.4 line-subgeometry conjecture — Mathesis</title>
+<style>html{color-scheme:light dark}body{max-width:68rem;margin:3rem auto;padding:0 2rem;font:18px/1.7 Georgia,"Noto Serif",serif}header,article{max-width:48rem}h1{font-size:2rem;line-height:1.3;font-weight:500}h2{font-size:1.3rem;margin-top:2rem}a{color:#357053}nav{display:flex;flex-wrap:wrap;gap:.6rem 1.5rem;margin:1.4rem 0}.meta{font:15px/1.6 system-ui,sans-serif}p{overflow-wrap:anywhere}footer{margin-top:3rem;font-size:.9rem}@media(max-width:600px){body{margin:1.5rem auto;padding:0 1.2rem}h1{font-size:1.6rem}}</style>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.22/dist/katex.min.css">
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.22/dist/katex.min.js"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.22/dist/contrib/auto-render.min.js" onload="renderMathInElement(document.body,{delimiters:[{left:'$$',right:'$$',display:true},{left:'$',right:'$',display:false},{left:'\\(',right:'\\)',display:false},{left:'\\[',right:'\\]',display:true}],throwOnError:false})"></script>
+</head><body><header><a href="https://papers.trureturing.org/">Mathesis papers</a><h1>A degree-12 counterexample to Saniga et al.&#x27;s Section 4.4 line-subgeometry conjecture</h1><p>Haobo Ma, Wenlin Zhang</p></header><nav><a href="../">论文</a></nav><article><p>当量子测量不可能具有统一自洽的预定结果时，几何图案能否总能准确标出最少必须违反多少条约束？Ma与Zhang对Saniga等人的一般猜想给出否定答案：主要反例只需违反十二条约束，每一种候选图案却都选中十五条。</p>
+<p>测量对象由单量子比特的泡利算符X、Y、Z及表示不操作的I组合而成，结果为+1或−1。某些三元组彼此对易，乘积是单位算符或其负值，赋给它们的结果也应满足相应乘积。这种三元组称为测量情境，几何上是一条含三个可观测量点的直线。不能统一赋值满足所有直线，就存在情境性；最少必须违反的直线数称为情境性度。三量子比特几何共有63点。</p>
+<p>Saniga等人在特殊构型中，把最优赋值的违反情境联系到“经典嵌入的分裂凯莱六边形”。它不是普通多边形，而是覆盖全部63点、每点恰过三条所选直线的结构。一般猜想要求任意有情境性的直线族，其度都等于它与某个这种结构共有的直线数。本文固定一个称为极点的可观测量，取与它对易的全部31点及其中所有75线。这包括不经过极点的线，区别于Muller等人研究的、只含过极点直线且无情境性的构型。</p>
+<p>起点是已知度为三的完整双量子比特几何，它有15点、15线。例如XX、ZZ、YY彼此对易，乘积却是负单位算符。处处赋+1恰好违反三条负直线。作者用十个六线网格证明下界：每点出现两次，负直线数却为奇数，故把每个网格的约束相乘就得到矛盾。每个网格至少违反一线，而每线只属四个网格，两条违反线不足以覆盖全部十个。</p>
+<p>极点为IIZ时，每个双比特点在末尾添I或Z，产生两个副本。过极点的15线全为正，每条原直线另有四个保留符号的提升。复制最优赋值并给极点赋+1，便只有十二次违反。反向看，按保持二元加法的规则选择副本共有十六种方式，每种都含完整双比特几何，至少违反三线；每条非极点直线恰被选中四次，故至少违反十二条不同直线。同样计数证明：至少两个量子比特时，完整对易构型的度总是少一个量子比特的完整几何的四倍。称为Clifford变换的测量对称性可移动任意极点，配合符号修正，保持约束是否违反不变。</p>
+<p>六边形障碍更简单：每条环境直线与这31点相交于一点或三点。六边形共有63线，在这31点上各贡献三次关联。若其中k线完全落入，便有93 = 3k + (63 − k)，所以k为15，而非十二。更小的反例把过XII的15线与Mermin–Peres方阵的六条行列线合并，其中两条重叠，共得19线。方阵迫使至少一次违反，处处赋+1又恰好达到，故度为一；每个六边形却至少与它共有三条过极点的线。</p>
+<p>证据的范围需分清。精确数值和任意量子比特数的规律有书面证明。作者报告的有限计算核查符号和小构型，并非靠外推建立一般规律。稿件所述的Lean证明仅给出IIZ处较弱的障碍：度大于零且不超过十二，而六边形交线至少十五。该陈述不涵盖精确度、一般精确交数、向所有极点的搬移及任意量子比特数的恒等式。</p>
+<p>因此，失败的是不加限制的等式，既有特殊情形仍成立。Holweck等人已证明经典六边形的直线补集可满足全部约束，故交线数仍是情境性度的上界；本文表明它对所有嵌入都可能严格偏大。利用已知完整三量子比特几何的度为63，一般规律还给出每个四量子比特完整对易构型的度为252，但不是完整四量子比特空间的度。邻近的斜六边形问题及整体四量子比特构型设想未由此解决。哪些附加条件能恢复等式，仍需研究。</p></article><footer><a href="https://mathesis-omega-research.apps.chrono-ai.fun/contribute">Contribute to the mathematics and its formalization</a></footer></body></html>

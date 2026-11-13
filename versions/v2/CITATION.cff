@@ -1,0 +1,11 @@
+cff-version: 1.2.0
+message: "If you use this work, cite it."
+title: "A degree-12 counterexample to Saniga et al.'s Section 4.4 line-subgeometry conjecture"
+authors:
+  - name: "Haobo Ma"
+  - name: "Wenlin Zhang"
+date-released: "2026-11-05"
+version: "2"
+url: "https://mathesis-omega-research.apps.chrono-ai.fun/papers/hexagon-perp-line-counterexamples?version=2"
+doi: "10.5281/zenodo.23904468"
+license: "CC-BY-4.0"

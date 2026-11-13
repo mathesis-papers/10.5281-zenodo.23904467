@@ -1,0 +1,15 @@
+{
+  "id": "hexagon-perp-line-counterexamples",
+  "revision": 2,
+  "topic": "Quantum contextuality and finite symplectic geometry",
+  "title": "A degree-12 counterexample to Saniga et al.'s Section 4.4 line-subgeometry conjecture",
+  "creators": [
+    {"name": "Ma, Haobo", "affiliation": "ChronoAI Pte Ltd, Singapore"},
+    {"name": "Zhang, Wenlin", "affiliation": "National University of Singapore; ChronoAI Pte Ltd, Singapore"}
+  ],
+  "license": "cc-by-4.0",
+  "problem_ids": ["saniga-et-al-2025-hexagon-contextuality-generalization"],
+  "abstract": "We refute the line-subgeometry conjecture in Section 4.4, p. 20 of Saniga et al., Hexagons govern three-qubit contextuality, arXiv:2312.07738v3 (Quantum 9 (2025), 1601). The 75-line geometry contained in any three-qubit perp hyperplane has contextuality degree 12 but meets every classically embedded split Cayley hexagon in 15 lines. A 19-line configuration has degree 1 and intersection at least 3. Linear sections and signed Clifford transport prove that every perp in n >= 2 qubits has four times the degree of the full (n-1)-qubit line geometry; every four-qubit perp consequently has degree 252.",
+  "summary": "Written proofs establish exact degree 12, exact three-regular-family intersection 15, the arbitrary-pole lifting identity, optimal-assignment characterization, and a 19-line witness. Degree is pole-independent, while canonical negative-line counts include 12 at IIZ and 24 at YYY. The pinned Lean declaration refutes the universal equality using the fixed IIZ witness; independent finite checks cover Pauli signs, the two-qubit minimum, all 63 negative-line counts, and the displayed configurations.",
+  "evidence_url": "https://github.com/the-omega-institute/trureturing/blob/6715a5bea38a03c80f6c4da6de93fea88798f026/D5/S3/Quantum/Contextuality/PerpHyperplaneHexagonContextualityRefutation.lean"
+}

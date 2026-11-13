@@ -1,0 +1,371 @@
+\documentclass[10pt]{article}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath,amssymb,amsthm,booktabs,array}
+\usepackage[colorlinks=true,urlcolor=blue,citecolor=blue,linkcolor=blue]{hyperref}
+\newtheorem{theorem}{Theorem}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{corollary}[theorem]{Corollary}
+\newcommand{\FF}{\mathbb F_2}
+\newcommand{\WW}{\mathcal W}
+\newcommand{\LL}{\mathcal L}
+\title{A degree-12 counterexample to Saniga et al.'s\newline Section 4.4 line-subgeometry conjecture}
+\author{Haobo Ma\\{\small ChronoAI Pte Ltd, Singapore}
+\and Wenlin Zhang\\{\small National University of Singapore}\\{\small ChronoAI Pte Ltd, Singapore}}
+\date{2 November 2026}
+\begin{document}
+\maketitle
+\begin{abstract}
+We refute the line-subgeometry conjecture in Section~4.4, p.~20 of Saniga et al.,
+\emph{Hexagons govern three-qubit contextuality}, arXiv:2312.07738v3
+(\emph{Quantum} \textbf{9} (2025), 1601).
+The configuration of all 75 isotropic lines contained in a point's perp
+hyperplane has contextuality degree exactly 12, whereas it shares exactly 15
+lines with every classically embedded split Cayley hexagon.
+The intersection count requires only three lines through each ambient point.
+The degree follows from a general identity: for every nonzero pole in $n\ge2$
+qubits, the full contained-line geometry of its perp has four times the degree
+of the full $(n-1)$-qubit line geometry; in four qubits this gives degree 252.
+We also give a 19-line counterexample of degree one.
+\end{abstract}
+
+\section{The conjecture and the configuration}
+Saniga et al.~\cite[Section~4.4, p.~20]{saniga} propose a generalization of their
+hexagon description of contextuality for the whole three-qubit space, quadrics,
+and doilies: ``A natural generalization of these findings is that this should
+hold for any contextual sub-geometry of $\WW(5,2)$ whose contexts are lines.''
+In particular, their conjecture would imply that every contextual line family
+$C$ admits a classically embedded split Cayley hexagon $H$ with
+\begin{equation}\label{eq:conjecture}
+ d(C)=|C\cap H|.
+\end{equation}
+Here a hexagon is identified with its line set. We disprove even this numerical
+consequence; consequently the stronger proposed description of optimal violated
+contexts also fails in this generality.
+The established special-case results are unaffected.
+
+Let $V_n=(\FF^2)^n$. Write a label as
+$v=((x_1,z_1),\ldots,(x_n,z_n))$ and put
+\[
+ B(u,v)=\sum_{j=1}^n(x_jz'_j+z_jx'_j),\qquad
+ P_v=\bigotimes_{j=1}^n i^{x_jz_j}X^{x_j}Z^{z_j}.
+\]
+Thus the local labels $(0,0),(1,0),(0,1),(1,1)$ denote $I,X,Z,Y$,
+respectively. The points of $\WW(2n-1,2)$ are the nonzero labels; its
+isotropic lines are $\ell=\{u,v,u+v\}$ with $u,v$ distinct and nonzero and
+$B(u,v)=0$. Denote their set by $\LL_n$. Define $s(\ell)\in\FF$ by
+$\prod_{q\in\ell}P_q=(-1)^{s(\ell)}I$ and set
+\[
+ d(C)=\min_{f:V_n\setminus\{0\}\to\FF}
+       \bigl|\{\ell\in C:\textstyle\sum_{q\in\ell}f(q)\ne s(\ell)\}\bigr|.
+\]
+The product is order-independent since the three observables commute.
+All minima exist because the assignment sets are finite.
+
+For a nonzero $p\in V_3$, let
+\[
+ S_p=\{q\ne0:B(p,q)=0\},\qquad
+ C_p=\{\ell\in\LL_3:\ell\subseteq S_p\}.
+\]
+The family $C_p$ includes lines not through $p$. It is therefore different
+from the perpset in Muller et al.~\cite[Section~2 and Proposition~2]{muller},
+whose contexts are only the lines through the pole and whose degree is zero.
+The finite obstruction $0<d(C_{IIZ})\le12<15\le|C_{IIZ}\cap H|$ is also
+encoded in the pinned Lean declaration described in Section~\ref{sec:scope}.
+The arguments below determine both numbers exactly and transport the degree
+to every pole.
+
+\begin{theorem}\label{thm:main}
+For every nonzero $p\in V_3$, the configuration $C_p$ has 31 points, 75 lines,
+and contextuality degree 12. If $H\subseteq\LL_3$ has exactly three lines
+through each of the 63 ambient points, then $|C_p\cap H|=15$.
+In particular, \eqref{eq:conjecture} fails for $C_p$ and every classically
+embedded split Cayley hexagon.
+\end{theorem}
+
+\section{An exact degree by linear sections}
+Put $d_m=d(\LL_m)$. The following identity supplies the lower bound without
+enumerating assignments on 31 points.
+\begin{proposition}\label{prop:lift}
+For $n\ge2$ and every nonzero $p\in V_n$, let $C^{(n)}_p$ contain all isotropic
+lines in $p^\perp\setminus\{0\}$. Then $d(C^{(n)}_p)=4d_{n-1}$.
+\end{proposition}
+\begin{proof}
+First take $p=I^{\otimes(n-1)}Z$ and write $m=n-1$.
+Every label in $p^\perp$ has the form $(u,t)$ with
+$u\in V_m$ and $t\in\FF$, representing $P_u\otimes Z^t$; the pole is
+$(0,1)$. There are two types of lines. The lines through the pole are
+\[
+ \{(0,1),(u,0),(u,1)\},\qquad u\in V_m\setminus\{0\}.
+\]
+Their sign is positive. Every other line projects injectively to a line
+$\{u,v,u+v\}\in\LL_m$ and has the form
+\[
+ \{(u,a),(v,b),(u+v,a+b)\},\qquad a,b\in\FF.
+\]
+These are four distinct lifts, all with the sign of the base line because
+$Z^aZ^bZ^{a+b}=I$. This also proves that the displayed list is exhaustive:
+a line whose projection is not injective contains the pole, and otherwise
+its projected labels are distinct, nonzero, and sum to zero.
+
+For each linear functional $\lambda:V_m\to\FF$, the section
+$u\mapsto(u,\lambda(u))$ identifies a copy of the full signed geometry
+$\LL_m$ inside $C^{(n)}_p$. Any assignment on the perp violates at least
+$d_m$ lines in each section. There are $2^{2m}$ sections. A fixed non-pole
+line prescribes $\lambda(u)=a$ and $\lambda(v)=b$ on two independent
+vectors, and so belongs to exactly $2^{2m-2}$ sections. Pole lines belong
+to none. If $N$ is the number of violated non-pole lines, double counting gives
+\[
+ 2^{2m-2}N\ge2^{2m}d_m,\qquad N\ge4d_m.
+\]
+This remains valid for $m=1$, when the base line set is empty and $d_1=0$.
+
+Conversely, choose an assignment $g$ attaining $d_m$ and put
+$f(u,t)=g(u)$ for $u\ne0$ and $f(0,1)=0$. Every pole line is satisfied,
+and each base violation gives exactly four lifted violations. Thus
+$d(C^{(n)}_p)\le4d_m$, proving equality.
+
+For an arbitrary nonzero pole $p$, single-qubit Clifford gates first change
+every nonidentity factor of $P_p$ to $Z$; controlled-NOT gates reduce a product
+of $Z$ factors to one, and swaps move it to the last qubit. Thus a Clifford
+unitary induces a symplectic map $g$ taking $p$ to $I^{\otimes(n-1)}Z$.
+Write $UP_vU^\dagger=(-1)^{\tau(v)}P_{gv}$. Conjugating the product on a line
+gives
+\[
+ s(g\ell)=s(\ell)+\sum_{v\in\ell}\tau(v).
+\]
+The assignment correspondence $f'(gv)=f(v)+\tau(v)$ therefore preserves the
+violation status of every line. Since $g$ carries $C^{(n)}_p$ bijectively
+onto the coordinate perp geometry, their degrees agree. This is the signed
+Clifford transport principle of~\cite[Lemma~3]{li}, with the assignment
+correspondence made explicit here.
+\end{proof}
+
+\begin{lemma}\label{lem:doily}
+The full two-qubit line geometry has degree $d_2=3$.
+\end{lemma}
+\begin{proof}
+For completeness, Tables~\ref{tab:lines} and~\ref{tab:grids} give an explicit
+parity certificate for the familiar doily value
+\cite[Section~2, Figure~4]{saniga}. A line has sign $-1$ precisely for
+numbers 10, 13, and 14 in Table~\ref{tab:lines}; for example
+$(XX)(ZZ)(YY)=-I$. The table follows directly from
+$XY=iZ$, $YZ=iX$, $ZX=iY$, reversing the sign when two distinct
+nonidentity factors are interchanged.
+Each row of Table~\ref{tab:grids} consists of six lines in which every
+occurring point appears exactly twice and the number of negative lines is odd.
+Summing the six parity equations makes their left side zero and their right
+side one, so at least one line in each row is violated. Each of the 15 lines
+occurs in four rows. If an assignment violates $k$ lines, then $4k\ge10$,
+and integrality gives $k\ge3$. The zero assignment violates exactly the
+three negative lines, proving $d_2=3$.
+This ten-grid incidence argument is also the local lower-bound method used
+by Li, Gupta, and Ganesh~\cite[Lemma~8 and Proposition~10]{li}.
+\end{proof}
+
+\begin{table}[ht]
+\centering\small\setlength{\tabcolsep}{3pt}
+\begin{tabular}{clc@{\qquad}clc@{\qquad}clc}
+\toprule
+No.&Observables&Sign&No.&Observables&Sign&No.&Observables&Sign\\
+\midrule
+1&$XI,IX,XX$&$+$&6&$ZI,IY,ZY$&$+$&11&$XX,YZ,ZY$&$+$\\
+2&$XI,IZ,XZ$&$+$&7&$YI,IX,YX$&$+$&12&$ZX,XZ,YY$&$+$\\
+3&$XI,IY,XY$&$+$&8&$YI,IZ,YZ$&$+$&13&$ZX,YZ,XY$&$-$\\
+4&$ZI,IX,ZX$&$+$&9&$YI,IY,YY$&$+$&14&$YX,XZ,ZY$&$-$\\
+5&$ZI,IZ,ZZ$&$+$&10&$XX,ZZ,YY$&$-$&15&$YX,ZZ,XY$&$+$\\
+\bottomrule
+\end{tabular}
+\caption{All two-qubit isotropic lines, with their canonical Pauli signs.}
+\label{tab:lines}
+\end{table}
+\begin{table}[ht]
+\centering\small
+\begin{tabular}{c@{\quad}c}
+\toprule
+Six line numbers&Six line numbers\\
+\midrule
+$1,2,4,5,10,12$&$2,3,8,9,12,13$\\
+$1,2,7,8,11,14$&$4,5,7,8,13,15$\\
+$1,3,4,6,11,13$&$4,6,7,9,12,14$\\
+$1,3,7,9,10,15$&$5,6,8,9,10,11$\\
+$2,3,5,6,14,15$&$10,11,12,13,14,15$\\
+\bottomrule
+\end{tabular}
+\caption{Ten parity-contradictory grids; every line occurs four times.}
+\label{tab:grids}
+\end{table}
+
+\begin{proof}[Proof of the degree and size assertions in Theorem~\ref{thm:main}]
+Proposition~\ref{prop:lift} and Lemma~\ref{lem:doily} give
+$d(C_p)=12$. At $IIZ$ the 31 points are the pole and two lifts of each base point.
+The 15 pole lines and 60 other lines give 75 lines in total;
+the same counts hold at every pole by the bijection in that proposition.
+The degree is pole-independent, but the number of negative lines for the
+canonical Pauli representatives is not: direct multiplication gives 12 at
+$IIZ$ and 24 at $YYY$, as the accompanying finite calculation verifies.
+At $IIZ$ the zero assignment violates exactly the four lifts of each of
+lines 10, 13, and 14.
+\end{proof}
+
+\begin{corollary}\label{cor:optimal}
+An assignment on $C_{IIZ}$ is optimal if and only if all 15 pole lines are
+satisfied and each of the 16 linear sections has exactly three violated lines.
+\end{corollary}
+\begin{proof}
+Every section has at least three violations. If there are 12 violations in
+total, the section count is at least $16\cdot3=48$ and at most
+$4\cdot12=48$. Equality forces every section to have three and every
+violation to avoid the pole. Conversely, the stated conditions give 48
+section incidences and hence $48/4=12$ total violations.
+\end{proof}
+
+\section{The intersection obstruction and its scope}
+\begin{proof}[Proof of the intersection assertion in Theorem~\ref{thm:main}]
+The nonzero linear functional $B(p,-)$ has a 32-element kernel, so
+$|S_p|=31$. On any isotropic line, its restriction is either zero everywhere
+or has a one-dimensional kernel. Thus every line meets $S_p$ in three or
+one points, respectively. If $H$ has degree three at every ambient point,
+counting all incidences gives $3|H|=3\cdot63$, so $|H|=63$.
+Put $k=|C_p\cap H|$. Counting incidences of $H$ with $S_p$ gives
+\[
+ 3\cdot31=3k+(63-k),\qquad k=15.
+\]
+A classically embedded split Cayley hexagon has all 63 ambient points and
+three isotropic lines through each point
+\cite[Section~2, pp.~6--7]{saniga}. It therefore satisfies the hypotheses,
+and $d(C_p)=12<15=|C_p\cap H|$ proves the contradiction.
+\end{proof}
+
+\paragraph{A surviving upper bound.}
+For any signed line family $C$ and a hexagon $H$ whose full line complement
+admits a satisfying assignment, that assignment can violate only lines of
+$C\cap H$. Hence $d(C)\le|C\cap H|$.
+Complements of classically embedded hexagons are noncontextual
+\cite{holweck}; this supplies the premise for genuine classical embeddings.
+Theorem~\ref{thm:main} shows that this upper bound can be strict for every
+such embedding simultaneously. Additional hypotheses are necessary for
+equality.
+
+\begin{corollary}\label{cor:small}
+There is a 19-line family $C$ with $d(C)=1$ and $|C\cap H|\ge3$ for every
+three-regular isotropic line family $H$ on all 63 points.
+\end{corollary}
+\begin{proof}
+Take all 15 isotropic lines through $XII$ and add the rows and columns of
+the Mermin--Peres square
+\[
+\begin{array}{ccc}
+XII&IXI&XXI\\ IZI&ZII&ZZI\\ XZI&ZXI&YYI.
+\end{array}
+\]
+Exactly two square lines contain $XII$, so the union has $15+6-2=19$
+lines. All lines through $XII$ are positive: their other two observables
+differ only by an $X$ on the first qubit and their product is $XII$.
+The square has just one negative line, $\{XXI,ZZI,YYI\}$.
+Thus the zero assignment has one violation, while the square's odd parity
+forces at least one. Finally, $H$ contains three lines through $XII$, all in
+$C$, so $|C\cap H|\ge3$.
+\end{proof}
+\paragraph{Consequences and neighboring statements.}
+Proposition~\ref{prop:lift} gives the exact degree $4d_{n-1}$ at every nonzero
+pole in $n\ge2$ qubits, not just at a coordinate pole. In particular, it gives
+degree $252$ for every full contained-line perp geometry in four qubits,
+using the known value
+$d_3=63$~\cite[Section~4.1]{saniga}. This is a statement about that perp,
+not the degree of the full four-qubit space. Table~\ref{tab:coverage}
+separates the conjecture from the neighboring assertions in its source.
+
+\begin{table}[ht]
+\centering\small
+\begin{tabular}{p{.43\linewidth}p{.50\linewidth}}
+\toprule
+Source item in arXiv:2312.07738v3&Mathematical coverage\\
+\midrule
+Section~4.4, p.~20: arbitrary contextual line subgeometries&
+Refuted by $C_p$: degree 12, intersection 15.\\
+Sections~4.1 and 4.4: full space, elliptic and hyperbolic quadrics, doilies&
+Restricted assertions retained; the coordinate doily degree 3 is reproved above.\\
+Section~4.4, pp.~20--21: skew-hexagon complements (24-line result on p.~21)&
+Not settled by the perp argument; the source's restricted result is distinct.\\
+Section~6, p.~24: four-qubit hyperbolic quadric&
+Degree 315 and classification of the 240 optimal violated sets as copies of
+$DW(5,2)$ proved subsequently by Li et al., Theorems~11 and~15~\cite{li};
+the classification uses a DRAT-certified finite enumeration.\\
+Section~6, pp.~24--25: full four-qubit space and proposed higher analogue&
+Not settled here; neither the perp formula nor the quadric theorem supplies the proposed global configuration.\\
+\bottomrule
+\end{tabular}
+\caption{Coverage of the conjecture and its neighboring source statements.}
+\label{tab:coverage}
+\end{table}
+
+\section{Formal statements and finite certificates}\label{sec:scope}
+The immutable \href{https://github.com/the-omega-institute/trureturing/blob/6715a5bea38a03c80f6c4da6de93fea88798f026/D5/S3/Quantum/Contextuality/PerpHyperplaneHexagonContextualityRefutation.lean}{Lean source}
+is
+\begin{quote}\small\ttfamily
+D5/S3/Quantum/Contextuality/\\
+PerpHyperplaneHexagonContextualityRefutation.lean
+\end{quote}
+It defines \texttt{claim} and proves \texttt{result : $\neg$ claim}, with qualified names
+\begin{quote}\small\ttfamily
+D5.S3.Quantum.Contextuality.\\
+PerpHyperplaneHexagonContextualityRefutation.claim\\[2pt]
+D5.S3.Quantum.Contextuality.\\
+PerpHyperplaneHexagonContextualityRefutation.result
+\end{quote}
+The hyperlink fixes the source commit; \texttt{verification-scope.json} gives its full
+identifier, both qualified declaration names, and the version and digest of
+\texttt{verify.py}.
+Its \texttt{IsClassicalHexagon} predicate requires isotropic lines, degree three
+at every ambient point, no ordinary triangles, and planarity at every point.
+Every genuine classical embedding satisfies these conditions by the
+definitions in~\cite[Sections~2--3]{saniga}; the incidence proof above only
+needs isotropy and degree three at every ambient point.
+
+The declaration's proof uses the fixed pole $IIZ$, positivity of its degree,
+the upper bound 12, and the lower bound 15 on hexagon intersections.
+The exact degree, the exact intersection count for arbitrary three-regular
+line families, the transport to all poles, Proposition~\ref{prop:lift}, and
+Corollary~\ref{cor:optimal} have the written proofs given here.
+Corollary~\ref{cor:small} is likewise a written proof.
+The accompanying \texttt{verify.py} checks all 315 three-qubit line signs by
+two implementations (matrix multiplication and binary phase exponents), the
+15-line and ten-grid tables, every one of the $2^{15}$ two-qubit assignments,
+the 16 sections and their multiplicities, and the perp's 31 points and 75 lines.
+It also checks the intersection count on the classical coordinate model from
+\cite[equations~(13)--(14)]{saniga}.
+The pole-dependent negative-line counts are checked for all 63 poles.
+The arbitrary-$n$, arbitrary-pole identity is proved by
+the section argument, rather than inferred from these finite checks.
+The 19-line union, its signs, and its square parity are checked as well.
+
+\begin{thebibliography}{9}
+\bibitem{saniga}
+M. Saniga, F. Holweck, C. Kelleher, A. Muller, A. Giorgetti, and H. de Boutray,
+\emph{Hexagons govern three-qubit contextuality}, Quantum \textbf{9} (2025), 1601.
+\href{https://doi.org/10.22331/q-2025-01-20-1601}{doi:10.22331/q-2025-01-20-1601};
+\href{https://arxiv.org/abs/2312.07738v3}{arXiv:2312.07738v3}.
+\bibitem{muller}
+A. Muller, M. Saniga, A. Giorgetti, H. de Boutray, and F. Holweck,
+\emph{New and improved bounds on the contextuality degree of multi-qubit configurations},
+Mathematical Structures in Computer Science \textbf{34} (2024), 322--343.
+\href{https://doi.org/10.1017/S0960129524000057}{doi:10.1017/S0960129524000057};
+\href{https://arxiv.org/abs/2305.10225}{arXiv:2305.10225}.
+\bibitem{holweck}
+F. Holweck, H. de Boutray, and M. Saniga,
+\emph{Three-qubit-embedded split Cayley hexagon is contextuality sensitive},
+Scientific Reports \textbf{12} (2022), 8915.
+\href{https://doi.org/10.1038/s41598-022-13079-3}{doi:10.1038/s41598-022-13079-3}.
+\bibitem{li}
+Z. Li, A. Gupta, and V. Ganesh,
+\emph{The Four-Qubit Hyperbolic Quadric Has Contextuality Degree 315},
+\href{https://arxiv.org/abs/2610.26465v1}{arXiv:2610.26465v1} (2026).
+\end{thebibliography}
+\enlargethispage{2\baselineskip}
+\medskip
+\noindent\small Licensed under Creative Commons Attribution 4.0 International
+(\href{https://creativecommons.org/licenses/by/4.0/}{CC BY 4.0}).
+\end{document}
