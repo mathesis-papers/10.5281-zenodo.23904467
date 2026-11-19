@@ -1,5 +1,3 @@
-<style>pre:has(> code[class*="typst"]) { display: none; }</style>
-
 # Parity certificates and references
 
 These are the complete finite certificates from manuscript Tables 1 and 2, supporting the [proof of the two-qubit degree](statements.md). Signs follow from $XY=iZ$, $YZ=iX$, $ZX=iY$, with the sign reversed on interchanging distinct nonidentity factors. The mathematical data are given here without requiring execution of the manuscript program.
@@ -59,6 +57,10 @@ Reference 2, Sections 2–3, defines the problem geometry and classical embeddin
 
 The exact-version DOI differs from the concept DOI. Cite the version DOI above for these proofs; the concept record is [10.5281/zenodo.23904467](https://doi.org/10.5281/zenodo.23904467).
 
+<section hidden="hidden">
+
 ```{=typst}
 #pagebreak()
 ```
+
+</section>

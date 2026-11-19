@@ -1,5 +1,3 @@
-<style>pre:has(> code[class*="typst"]) { display: none; }</style>
-
 # 奇偶证书与文献
 
 本附录保留原文表 1、表 2 的完整有限证书，支撑[两比特度数的证明](statements.md)。符号可由 $XY=iZ$、$YZ=iX$、$ZX=iY$ 及反向交换时变号直接计算。这里给出数学数据，不把论文附带程序的运行视为证明前提。
@@ -26,9 +24,13 @@
 | 14 | $YX, XZ, ZY$ | − |
 | 15 | $YX, ZZ, XY$ | + |
 
+<section hidden="hidden">
+
 ```{=typst}
 #pagebreak()
 ```
+
+</section>
 
 <a id="grids"></a>
 
@@ -63,6 +65,10 @@
 
 本文版本 DOI 与概念 DOI 不同：引用本证明使用上述版本 DOI；概念记录为 [10.5281/zenodo.23904467](https://doi.org/10.5281/zenodo.23904467)。
 
+<section hidden="hidden">
+
 ```{=typst}
 #pagebreak()
 ```
+
+</section>
