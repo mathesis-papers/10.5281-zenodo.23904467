@@ -1,0 +1,29 @@
+{
+  "duration": "2:50",
+  "id": "001-twelve-fifteen",
+  "lean": [
+    "D5/S3/Quantum/Contextuality/PerpHyperplaneHexagonContextualityRefutation.result"
+  ],
+  "narration": {
+    "engine": "Kokoro-82M v1.0 (onnx)",
+    "language": "en",
+    "voice": "af_heart"
+  },
+  "outputs": {
+    "cover": "hexagon-perp-line-counterexamples_001_cover.jpg",
+    "narrated_720p": "hexagon-perp-line-counterexamples_001_720p_narrated.mp4"
+  },
+  "publication_basis": "pinned",
+  "released": "2026-11-16",
+  "resolution": "1280x720@30",
+  "style": "trureturing cyberpunk · deterministic canvas",
+  "subject": "https://github.com/the-omega-institute/trureturing",
+  "subtitles": [
+    "zh",
+    "en"
+  ],
+  "summary": "A sign-filling puzzle, four lifts and two incidence counts explain why a 75-line contextual geometry has degree twelve but meets every classical hexagon in fifteen lines.",
+  "summary_zh": "从正负号游戏、四种提升和两次关联计数，解释为什么 75 线情境性几何度数为 12，而每个经典六边形的交集为 15。",
+  "title": "Why twelve is not fifteen",
+  "title_zh": "为什么 12 不等于 15"
+}

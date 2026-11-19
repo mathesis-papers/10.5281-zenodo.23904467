@@ -28,3 +28,41 @@ Haobo Ma, Wenlin Zhang (2026). A degree-12 counterexample to Saniga et al.'s Sec
 ## Contributions
 
 Original authors are listed above. Formalization contributors and attribution are retained in `formalization/nodes.json`; repository pull requests do not confer verification or credit. Submit formalization attempts through the Mathesis attempt path described in [CONTRIBUTING.md](CONTRIBUTING.md).
+
+<!-- Mathesis generated repository guide; refresh with paper.py front. -->
+
+## Reading and materials
+
+[Paper site](https://papers.trureturing.org/10.5281-zenodo.23904467/) · [Frozen PDF](paper.pdf) · [Citation](CITATION.cff)
+
+[中文阅读](https://papers.trureturing.org/10.5281-zenodo.23904467/hexagon-perp-line-counterexamples/zh/) · [Read in English](https://papers.trureturing.org/10.5281-zenodo.23904467/hexagon-perp-line-counterexamples/en/)
+
+[Slides](https://papers.trureturing.org/10.5281-zenodo.23904467/hexagon-perp-line-counterexamples/slides/) ([sources](books/hexagon-perp-line-counterexamples/slides/)) · [Videos](https://papers.trureturing.org/10.5281-zenodo.23904467/hexagon-perp-line-counterexamples/films/) ([sources](books/hexagon-perp-line-counterexamples/films/))
+
+These are publication routes; available built materials are inventoried in [mathesis-materials.json](https://papers.trureturing.org/10.5281-zenodo.23904467/mathesis-materials.json).
+
+## Book and formalization
+
+Catalog formalization status above is separate from the statement comparisons below. A nearby declaration does not verify the complete written result.
+
+| Book result | Comparison with formal base | Compared declaration |
+|---|---|---|
+| `thm-perp` | variant | `D5/S3/Quantum/Contextuality/PerpHyperplaneHexagonContextualityRefutation.result` |
+| `prop-lift` | none | — |
+| `lem-doily` | variant | `D5/S3/Quantum/Contextuality/LinearDoilyNegativeLineParity.result` |
+| `cor-optimal` | none | — |
+| `cor-small` | variant | `D5/S3/Quantum/Contextuality/PerpHyperplaneHexagonContextualityRefutation.result` |
+| `thm-negation` | same | `D5/S3/Quantum/Contextuality/PerpHyperplaneHexagonContextualityRefutation.result` |
+
+Book stage: **complete**; 0 pending claims. [Statement comparisons](.mathesis/REVIEW.md).
+
+## Repository map
+
+| Zone | Location |
+|---|---|
+| Paper record | `paper.json`, `CITATION.cff`, `paper.pdf`, `manuscript/`, `formalization/nodes.json`, `LICENSES/`, `.mathesis/` |
+| Content | `books/hexagon-perp-line-counterexamples/`: Chinese/English text, figures, visualizations, videos, slides, assets |
+| Machinery | Upstream and layer managed paths; update with `tbook template update` |
+| Repository front | This README, changelog, contribution guide, licence, project/site/pin configuration, `template.d/` |
+
+See [the enforced layout](docs/layer-mathesis/LAYOUT.md). Preparation run records and built outputs stay outside the committed tree.

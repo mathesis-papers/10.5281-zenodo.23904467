@@ -1,0 +1,77 @@
+{
+  "book": "hexagon-perp-line-counterexamples",
+  "pending_claims": [],
+  "results": {
+    "thm-perp": {
+      "claim": "collected:hexagon-perp-line-counterexamples:2:s1",
+      "gids": [],
+      "comparison_verdict": "variant",
+      "compared_public_gid": "D5/S3/Quantum/Contextuality/PerpHyperplaneHexagonContextualityRefutation.result",
+      "comparison_commit": "8a24ea4e79de962725aab9d9b49cc605fcc211d8",
+      "formalization_request": {
+        "label": "Theorem 1 — exact all-pole perp counterexample",
+        "url": "https://github.com/the-omega-institute/trureturing-requests/issues/192"
+      }
+    },
+    "prop-lift": {
+      "claim": "collected:hexagon-perp-line-counterexamples:2:s2",
+      "gids": [],
+      "comparison_verdict": "none",
+      "compared_public_gid": null,
+      "comparison_commit": "8a24ea4e79de962725aab9d9b49cc605fcc211d8",
+      "formalization_request": {
+        "label": "Proposition 2 — fourfold section formula",
+        "url": "https://github.com/the-omega-institute/trureturing-requests/issues/193"
+      }
+    },
+    "lem-doily": {
+      "claim": "collected:hexagon-perp-line-counterexamples:2:s3",
+      "gids": [],
+      "comparison_verdict": "variant",
+      "compared_public_gid": "D5/S3/Quantum/Contextuality/LinearDoilyNegativeLineParity.result",
+      "comparison_commit": "8a24ea4e79de962725aab9d9b49cc605fcc211d8",
+      "formalization_request": {
+        "label": "Lemma 3 — exact two-qubit degree",
+        "url": "https://github.com/the-omega-institute/trureturing-requests/issues/194"
+      }
+    },
+    "cor-optimal": {
+      "claim": "collected:hexagon-perp-line-counterexamples:2:s4",
+      "gids": [],
+      "comparison_verdict": "none",
+      "compared_public_gid": null,
+      "comparison_commit": "8a24ea4e79de962725aab9d9b49cc605fcc211d8",
+      "formalization_request": {
+        "label": "Corollary 4 — equality criterion",
+        "url": "https://github.com/the-omega-institute/trureturing-requests/issues/193"
+      }
+    },
+    "cor-small": {
+      "claim": "collected:hexagon-perp-line-counterexamples:2:s5",
+      "gids": [],
+      "comparison_verdict": "variant",
+      "compared_public_gid": "D5/S3/Quantum/Contextuality/PerpHyperplaneHexagonContextualityRefutation.result",
+      "comparison_commit": "8a24ea4e79de962725aab9d9b49cc605fcc211d8",
+      "formalization_request": {
+        "label": "Corollary 5 — nineteen-line witness",
+        "url": "https://github.com/the-omega-institute/trureturing-requests/issues/195"
+      }
+    },
+    "thm-negation": {
+      "claim": "collected:hexagon-perp-line-counterexamples:2:s1",
+      "gids": [
+        "D5/S3/Quantum/Contextuality/PerpHyperplaneHexagonContextualityRefutation.result"
+      ],
+      "comparison_verdict": "same",
+      "compared_public_gid": "D5/S3/Quantum/Contextuality/PerpHyperplaneHexagonContextualityRefutation.result",
+      "comparison_commit": "8a24ea4e79de962725aab9d9b49cc605fcc211d8"
+    }
+  },
+  "stage": "complete",
+  "titles": {
+    "en": "A degree-12 counterexample to Saniga et al.'s Section 4.4 line-subgeometry conjecture",
+    "zh": "A degree-12 counterexample to Saniga et al.'s Section 4.4 line-subgeometry conjecture"
+  },
+  "version": 2,
+  "work": "hexagon-perp-line-counterexamples"
+}

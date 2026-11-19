@@ -1,0 +1,178 @@
+{
+  "voice": "af_heart",
+  "speed": 0.98,
+  "say": {
+    "qubit": "cue bit",
+    "qubits": "cue bits",
+    "Pauli": "Pow lee",
+    "Lean": "Leen"
+  },
+  "music": {
+    "bpm": 80,
+    "progression": "d-minor"
+  },
+  "scenes": [
+    {
+      "id": "question",
+      "name": "TWELVE VERSUS FIFTEEN",
+      "lead": 0.8,
+      "tail": 0.8,
+      "music": [
+        0.6,
+        0.2,
+        0.15,
+        0,
+        0.05
+      ],
+      "lines": [
+        [
+          "Can geometry tell us the exact number of quantum measurement rules that must fail? Here the answer is no.",
+          "几何能否准确告诉我们，至少多少条量子测量规则必须失败？这里答案是否定的。"
+        ],
+        [
+          "A family of seventy-five lines needs twelve failures, but every classical hexagon shares fifteen of its lines.",
+          "一个 75 线族最少错 12 条，而每个经典六边形都与它共享 15 条线。"
+        ],
+        [
+          "To see why, start with a puzzle: give each point a plus or minus sign, and multiply the three signs on each line.",
+          "原因从一个游戏开始：每点填正负号，再把每条线上的三个符号相乘。"
+        ]
+      ]
+    },
+    {
+      "id": "parity",
+      "name": "THE PARITY PUZZLE",
+      "lead": 0.8,
+      "tail": 0.8,
+      "music": [
+        0.6,
+        0.2,
+        0.15,
+        0,
+        0.05
+      ],
+      "lines": [
+        [
+          "Here X, Y, and Z label measurements; I means identity. Each row and column is a rule, with only the last column negative.",
+          "X、Y、Z 表示测量，I 表示恒等操作。每行每列是一条规则，只有最后一列要求负的乘积。"
+        ],
+        [
+          "Every point appears twice. Multiplying all six rules gives plus one on the left, but minus one on the right. One rule must fail.",
+          "每个点出现两次。六条规则相乘，左边是正一，右边却是负一，所以至少错一条。"
+        ],
+        [
+          "The full two-qubit geometry has ten contradictory grids. Each line belongs to four, forcing at least three failures. All plus signs fail exactly three negative lines.",
+          "完整两比特几何有十个矛盾方阵，每条线属于四个，因而至少错三条。全部填正号，又恰好只错三条负线。"
+        ]
+      ]
+    },
+    {
+      "id": "lifts",
+      "name": "FOUR LIFTS",
+      "lead": 0.8,
+      "tail": 0.8,
+      "music": [
+        0.6,
+        0.2,
+        0.15,
+        0,
+        0.05
+      ],
+      "lines": [
+        [
+          "Now use the pole called I I Z. Give every two-qubit point two copies, by appending I or Z, and add the pole.",
+          "现在取极点 I I Z。每个两比特点末尾分别加 I 或 Z，形成两个副本，再加上极点。"
+        ],
+        [
+          "Each base line has four lifts with the same sign. Fifteen pole lines and sixty lifted lines make seventy-five.",
+          "每条底层线有四种同号提升，15 条极点线加 60 条提升线，共 75 条。"
+        ],
+        [
+          "Copy an optimal base assignment to both copies. Three base failures become twelve lifted failures, while every pole line is satisfied.",
+          "把最优底层赋值抄给两个副本。三条底层错线变成十二条提升错线，而全部极点线满足。"
+        ]
+      ]
+    },
+    {
+      "id": "sections",
+      "name": "WHY TWELVE IS OPTIMAL",
+      "lead": 0.8,
+      "tail": 0.8,
+      "music": [
+        0.6,
+        0.2,
+        0.15,
+        0,
+        0.05
+      ],
+      "lines": [
+        [
+          "For the lower bound, select one copy of every point using a rule that preserves binary addition. There are sixteen such linear sections.",
+          "为证明下界，用保持模二加法的规则从每对副本选一个；这样的线性截面有十六个。"
+        ],
+        [
+          "Each section is a whole two-qubit geometry and needs three failures. That gives at least forty-eight section-failure incidences.",
+          "每个截面都是完整两比特几何，至少错三条，因此至少有四十八次截面与错线的关联。"
+        ],
+        [
+          "Every non-pole line is counted four times, and pole lines are never counted. Dividing forty-eight by four forces twelve distinct failures.",
+          "每条非极点线计数四次，极点线不计数。四十八除以四，强迫至少十二条不同的错线。"
+        ]
+      ]
+    },
+    {
+      "id": "intersection",
+      "name": "WHY FIFTEEN IS FORCED",
+      "lead": 0.8,
+      "tail": 0.8,
+      "music": [
+        0.6,
+        0.2,
+        0.15,
+        0,
+        0.05
+      ],
+      "lines": [
+        [
+          "Now forget assignments and count geometry. The thirty-one points commuting with the pole meet every ambient line in either one point or three.",
+          "现在不看赋值，只数几何。与极点交换的三十一个点，与每条环境线相交于一点或三点。"
+        ],
+        [
+          "A hexagon has sixty-three lines, with three through each point. The thirty-one selected points therefore contribute ninety-three incidences.",
+          "六边形有六十三条线，每点三线。因此选中的三十一个点贡献九十三次关联。"
+        ],
+        [
+          "If k lines lie entirely inside, the count is three k plus sixty-three minus k. Solving gives fifteen, whereas the degree is twelve.",
+          "若有 k 条线完全在内部，计数就是三 k 加六十三减 k。解得十五，而度数却是十二。"
+        ]
+      ]
+    },
+    {
+      "id": "scope",
+      "name": "WHAT THE COUNTEREXAMPLE SAYS",
+      "lead": 0.8,
+      "tail": 0.8,
+      "music": [
+        0.6,
+        0.2,
+        0.15,
+        0,
+        0.05
+      ],
+      "lines": [
+        [
+          "The intersection is still an upper bound, but it can be strict for every classical embedding. Earlier special cases remain intact.",
+          "交集仍是上界，却可能对每个经典嵌入都严格。已有特殊情形结论保留。"
+        ],
+        [
+          "Lean verifies the negation of the universal equality using a positive degree at most twelve and intersections at least fifteen. The exact counts have written proofs.",
+          "Lean 用正度数至多十二、交集至少十五，验证了普遍等式的否定。精确数值另有书面证明。"
+        ],
+        [
+          "This is the counterexample of Haobo Ma and Wenlin Zhang, answering the generalization proposed by Saniga and colleagues. Which extra hypotheses restore equality?",
+          "这是 Haobo Ma 与 Wenlin Zhang 对 Saniga 等人推广猜想给出的反例。哪些附加假设能恢复等号？"
+        ]
+      ]
+    }
+  ]
+}

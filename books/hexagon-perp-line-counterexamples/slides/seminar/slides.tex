@@ -1,0 +1,208 @@
+\documentclass{beamer}
+\input{tbook-deck}
+\title{为什么 12 不等于 15：一个量子情境性反例}
+\author{Haobo Ma \and Wenlin Zhang}
+\date{Version 2 (2026)}
+\begin{document}
+% Manuscript: Title and abstract
+\begin{frame}
+\titlepage
+\note{先给出答案：75 条线的最小违反数为 12，而每个经典六边形的交集为 15。作者与机构依照论文第二版。}
+\end{frame}
+% Manuscript: Story roadmap
+\begin{frame}{路线}
+\tableofcontents
+\note{先解释正负号游戏，再计算最小违反数与几何交集，最后区分完整定理与公开形式结论。}
+\end{frame}
+\section{规则}
+% Manuscript: Section 1, definitions
+\begin{frame}{给每个点填一个正负号}
+\begin{itemize}
+\item 每点填 $+1$ 或 $-1$，在所有线里保持同一个值。
+\item 每条三点线规定三个值的乘积符号。
+\item $d(C)$：所有填法中，最少错多少条线？
+\end{itemize}
+\begin{block}{具体例子}
+$XX,ZZ,YY$ 两两交换，但 $(XX)(ZZ)(YY)=-I$。
+\end{block}
+\note{$I$ 表示恒等操作，$XI$ 表示第一位用 $X$、第二位用 $I$。不需要矩阵知识；关键是预定结果不能因情境不同而换号。}
+\end{frame}
+% Manuscript: Corollary 5, square parity
+\begin{frame}{六条规则不能全对}
+\[
+\begin{array}{ccc}XII&IXI&XXI\\IZI&ZII&ZZI\\XZI&ZXI&YYI\end{array}
+\]
+三行与前两列的乘积为 $+I$，最后一列为 $-I$。
+\begin{itemize}
+\item 每个点在六条规则中出现两次。
+\item 左边全乘得 $+1$，右边全乘得 $-1$。
+\end{itemize}
+因此至少错一条线。
+\note{每一行、每一列都是交换情境。矛盾在于一个统一赋值不能全部满足。这只证明至少错一条，还没有给出完整两比特几何的度数三。}
+\end{frame}
+% Manuscript: Section 1, Theorem 1
+\begin{frame}{猜想与主结论}
+Saniga 等第 4.4 节的推广要求：每个情境性线族 $C$ 都有某个经典六边形 $H$，使
+\[d(C)=|C\cap H|.\]
+\begin{bookresult}{thm-perp}
+对每个非零三比特极点 $p$，$C_p$ 有 31 点、75 线、度数 12。若 $H$ 在全部 63 点上每点恰有三条各向同性线，则 $|C_p\cap H|=15$。每个经典六边形都满足条件，故等式失败。
+\end{bookresult}
+\note{$C_p$ 取与 $p$ 交换的标签中的全部线，包括不经过极点的线。只保留极点线的另一构型度数为零。这里是完整书面定理，后面形式否定的范围较窄。}
+\end{frame}
+\section{度数}
+% Manuscript: Lemma 3, Tables 1 and 2
+\begin{frame}{底层为什么最少错三条}
+完整两比特几何有 15 点、15 线。
+\begin{bookresult}{lem-doily}
+$d_2=3$。
+\end{bookresult}
+\begin{itemize}
+\item 全填 $+1$ 恰错三条负线，故 $d_2\le3$。
+\item 十个矛盾方阵，每个至少需要一条错线。
+\item 每条线属于四个方阵：$4k\ge10$，故 $k\ge3$。
+\end{itemize}
+\note{此 doily 值已见 Saniga 等文献，本文提供显式十方阵证书。整数性把 $k\ge2.5$ 提升为 $k\ge3$。完整列表在阅读附录。}
+\end{frame}
+% Manuscript: Proposition 2, coordinate pole
+\begin{frame}{一条底层线，四种提升}
+在极点 $IIZ$，以 $(u,t)$ 表示 $P_u\otimes Z^t$。
+\[
+\{(0,1),(u,0),(u,1)\},\quad u\ne0,
+\]
+是正的极点线。其余线是四种提升
+\[
+\{(u,a),(v,b),(u+v,a+b)\},\quad a,b\in\mathbb F_2.
+\]
+\begin{itemize}
+\item 提升保留底层符号。
+\item $31=1+2\cdot15$；$75=15+4\cdot15$。
+\item 复制底层最优赋值：$d(C_{IIZ})\le4\cdot3=12$。
+\end{itemize}
+\note{加法按模二计算；第三个提升坐标由前两个决定。末尾的 $Z$ 因子相乘为 $I$，所以四种符号都等于底层符号。极点赋值为 $+1$。}
+\end{frame}
+% Manuscript: Proposition 2, lower bound
+\begin{frame}{十六个截面排除更少的错线}
+选 $(u,\lambda(u))$，其中 $\lambda:V_2\to\mathbb F_2$ 线性。
+\begin{itemize}
+\item 16 个截面，各有一份完整两比特几何。
+\item 每个截面至少错三条线。
+\item 每条非极点线出现四次，极点线不出现。
+\end{itemize}
+若非极点错线数为 $N$，
+\[4N\ge16\cdot3,\qquad N\ge12.\]
+下界与上界相遇。
+\note{提升线指定了线性函数在两个独立向量上的值，剩余两个自由值，所以有四个截面。线性保证底层线保留。极点线不贡献截面关联。}
+\end{frame}
+% Manuscript: Proposition 2, signed Clifford transport
+\begin{frame}{一般公式与符号修正}
+\begin{bookresult}{prop-lift}
+$n\ge2$、$p\ne0$ 时，$d(C_p^{(n)})=4d_{n-1}$。
+\end{bookresult}
+$m=n-1$：$2^{2m}$ 个截面，每条线重数 $2^{2m-2}$。
+\[
+\begin{aligned}
+UP_vU^\dagger&=(-1)^{\tau(v)}P_{gv},\\
+f'(gv)&=f(v)+\tau(v).
+\end{aligned}
+\]
+修正保留错线状态，同时搬运极点。
+$n=2$ 时 $d_1=0$；四比特极超平面度数为 252。
+\note{左边是极超平面度数，不是完整空间度数 $d_n$。有符号搬运归于 Li、Gupta 与 Ganesh 的引理三。规范代表的负线数可以随极点改变。使用已知完整空间 $d_3=63$ 得到 $4\cdot63=252$。}
+\end{frame}
+\section{交集}
+% Manuscript: Theorem 1, intersection proof
+\begin{frame}{第二次计数强迫十五条}
+$S_p$ 有 31 点；每条线与它相交于一点或三点。
+\begin{itemize}
+\item 每点三线，故 $H$ 有 63 条线。
+\item 在 $S_p$ 上计数：$31\cdot3=93$ 次关联。
+\end{itemize}
+令 $k=|C_p\cap H|$，则
+\[93=3k+(63-k),\qquad k=15.\]
+\begin{block}{障碍}
+$12=d(C_p)<|C_p\cap H|=15$，对每个候选均成立。
+\end{block}
+\note{一点或三点来自模二线性函数在二维空间上的核。这里只用各向同性与三正则，不需要六边形额外条件。}
+\end{frame}
+% Manuscript: Corollary 5
+\begin{frame}{十九条线也足够}
+\begin{bookresult}{cor-small}
+存在 19 线族 $C$，使 $d(C)=1$，且对全部 63 点上三正则的每个各向同性线族 $H$，都有 $|C\cap H|\ge3$。
+\end{bookresult}
+\begin{itemize}
+\item $XII$ 的 15 条极点线与六条方阵线，重合两条。
+\item $15+6-2=19$；全填 $+1$ 恰错一条。
+\item 方阵奇偶性强迫至少错一条。
+\item $H$ 的三条 $XII$ 极点线都在并集中。
+\end{itemize}
+\note{这个构造独立于一般四倍公式，不含最小规模断言。$H$ 的三正则假设仍涉及全部 63 个环境点。}
+\end{frame}
+\section{范围}
+% Manuscript: Section 4, public Lean declaration
+\begin{frame}{公开形式结论的准确范围}
+候选 $H$：各向同性、每点三线、无普通三角形、局部平面。
+\begin{bookresult}{thm-negation}
+并非每个 $C\subseteq\mathcal L_3$、$d(C)>0$，都存在这样的 $H$ 使 $d(C)=|C\cap H|$。
+\end{bookresult}
+形式证明在 $IIZ$ 使用不等式链
+\[0<d(C)\le12<15\le|C\cap H|.\]
+精确值、一般公式与十九线构造保留各自书面证明。
+\note{局部平面表示同过一点的两条线上的任意点互相正交。每个真正经典嵌入满足这些条件，不声称反向刻画。形式结果框是这个否定，而非完整反例的全部精确性质。}
+\end{frame}
+% Manuscript: Section 3, surviving upper bound
+\begin{frame}{保留下来的上界与下一问}
+Holweck 等证明经典六边形补集可以同时满足，从而
+\[d(C)\le|C\cap H|.\]
+\begin{itemize}
+\item 本例让不等式对所有经典嵌入都严格。
+\item 已建立的特殊构型结论保留。
+\item 斜六边形补集与完整四比特几何不在本论证范围内。
+\end{itemize}
+\begin{block}{下一问}
+哪些附加假设可以恢复等号？
+\end{block}
+\note{补集赋值只能在交集中出错，所以给出上界。Li 等的四比特双曲二次曲面度数 315 是另一个结果，不同于这里度数 252 的极超平面。}
+\end{frame}
+\appendix
+\section{附录}
+% Manuscript: Corollary 4
+\begin{frame}{什么时候一个赋值最优？}
+\begin{bookresult}{cor-optimal}
+$C_{IIZ}$ 上赋值最优，当且仅当 15 条极点线全部满足，16 个截面各恰错三条。
+\end{bookresult}
+\[16\cdot3\le\text{截面错线关联数}\le4\cdot12.\]
+两端均为 48，等号迫使两个条件。
+反之，$48/4=12$ 条错线达到最优值。
+\note{这是截面下界的等号情形。若有极点线失败，便少于十二条非极点错线，无法产生四十八次关联。}
+\end{frame}
+% Manuscript: Sections 1 and 2, general notation
+\begin{frame}{一般计数的符号}
+\[
+V_n=(\mathbb F_2^2)^n,\quad B(u,v)=\sum_{j=1}^{n}(x_jz'_j+z_jx'_j).
+\]
+\[P_v=\bigotimes_{j=1}^{n}i^{x_jz_j}X^{x_j}Z^{z_j}.\]
+\begin{itemize}
+\item 线为 $\{u,v,u+v\}$；$u,v\ne0$，$u\ne v$，$B(u,v)=0$。
+\item $m=n-1\ge1$；一条提升线指定两个独立值。
+\item $2^{2m-2}N\ge2^{2m}d_m$；提升最优赋值给出反向界。
+\item $m=1$ 时底层没有线，度数为零。
+\end{itemize}
+\note{求和与张量的指标范围均已标明。赋值集合有限，最小值达到，无需极限过程。阅读正文给出了完整线分类和有符号赋值对应。}
+\end{frame}
+% Manuscript: Bibliography
+\begin{frame}{文献}
+\small
+\begin{itemize}
+\item Haobo Ma, Wenlin Zhang (2026), version 2.\newline
+\href{https://doi.org/10.5281/zenodo.23904468}{DOI: 10.5281/zenodo.23904468}.
+\item M. Saniga et al., \emph{Hexagons govern three-qubit contextuality}, Quantum 9 (2025), 1601.\newline
+\href{https://arxiv.org/abs/2312.07738v3}{arXiv:2312.07738v3}, Section 4.4, p.20.
+\item F. Holweck, H. de Boutray, M. Saniga, Scientific Reports 12 (2022), 8915.
+\item A. Muller et al., MSCS 34 (2024), 322--343.
+\item Z. Li, A. Gupta, V. Ganesh, \href{https://arxiv.org/abs/2610.26465v1}{arXiv:2610.26465v1} (2026).
+\end{itemize}
+\note{完整标题、DOI 与具体归属见阅读附录。版本 DOI 标识本论文及其证明。}
+\end{frame}
+% Manuscript: Formal scope, generated source-linked ledger
+\FormalVerification
+\end{document}

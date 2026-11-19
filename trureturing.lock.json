@@ -1,0 +1,17 @@
+{
+  "schema": "trureturing-books.lock.v1",
+  "repo": "the-omega-institute/trureturing",
+  "branch": "dev",
+  "commit": "8a24ea4e79de962725aab9d9b49cc605fcc211d8",
+  "pinned_at": "2026-11-08T12:32:04Z",
+  "declarations": {
+    "D5/S3/Quantum/Contextuality/PerpHyperplaneHexagonContextualityRefutation.result": {
+      "module": "D5/S3/Quantum/Contextuality/PerpHyperplaneHexagonContextualityRefutation",
+      "name": "D5.S3.Quantum.Contextuality.PerpHyperplaneHexagonContextualityRefutation.result",
+      "kind": "theorem",
+      "statement_id": "sha256:b5f76ff23ecd88b5ecc3de0cedf022d9f570e7c986a27150ac7938fcb86b96e0",
+      "line": 442,
+      "signature": "theorem result : ¬ claim"
+    }
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "schema": "mathesis.collection-history.v1",
+  "sha256": {
+    "versions/v2/.mathesis/generated.json": "046cda457812774c80d6e333ebbb39283624f09444f9ae53c4bbf9cc9637e50d",
+    "versions/v2/CHANGELOG.md": "84288146cd900c5508c16f2e8a46e424fca086207d4c9b46a20d49c71b3bf382",
+    "versions/v2/CITATION.cff": "e72f91aa5f9ca984efd82a595871fa9cecb1756d589c1865dfa5bde47f1589f5",
+    "versions/v2/CONTRIBUTING.md": "fafd66e63160b2a88f433af56d2af2b0f7bf6ed2fd417d46b54446ce07c627ff",
+    "versions/v2/LICENSES/CC-BY-4.0.txt": "58230517b7895aa219ff46a6ed63e67057a1582fb9ea054b16728a8c13525650",
+    "versions/v2/README.md": "be786797d78bf5a1d4801b1067d6c5849bc1989a5c60de4cadb75aff7008db7f",
+    "versions/v2/formalization/nodes.json": "f4faf75630f5a3258de51ab75c846a7caad8293eabe5d88b4caaa6e979bf09f8",
+    "versions/v2/manuscript/README.md": "d27528778694ddde7fe8a98d5553b056676219d377cc4dc73cd84a7d7a19a741",
+    "versions/v2/manuscript/metadata.json": "28757e3624c6880ec7aa179c631c00a42898c67132b678671038d90125cd5869",
+    "versions/v2/manuscript/note.tex": "47ad633e14d69ee67e101c59ccc1154fded8d7ca5110ac045d2120ec4a344887",
+    "versions/v2/manuscript/verification-scope.json": "6b95d4799568c420aff35dba1625774ed6449126b761ef530b76b135a91ae393",
+    "versions/v2/manuscript/verify.py": "a0b4d421ba979da64259b90e7fa7ef3f4152aecbb73ed0fdd2483ab168ea9681",
+    "versions/v2/paper.json": "8572c52d02407ce7cb489b189c34f26c9b7546adfa135d0807aaf2537eb4d79d",
+    "versions/v2/paper.pdf": "e942ec3e50473014eab69d1192e0ca42c3b8e9d0722071409eecf5117764a1fa",
+    "versions/v2/source.archive": "c6ec59a03b18b53642e22b15d1926677b8abdef80445d7309c322413a1ba2972"
+  },
+  "source_commit": "9326139e2571bb2c5705d89fb4a7cb3b58abe55f",
+  "work": "hexagon-perp-line-counterexamples"
+}

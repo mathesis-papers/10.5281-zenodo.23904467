@@ -1,0 +1,209 @@
+\documentclass{beamer}
+\input{tbook-deck}
+\title{Twelve versus fifteen:\\A contextuality counterexample}
+\author{Haobo Ma \and Wenlin Zhang}
+\date{Version 2 (2026)}
+\begin{document}
+% Manuscript: Title and abstract
+\begin{frame}
+\titlepage
+\note{The answer comes first: a family of 75 lines has minimum twelve failures, but every classical hexagon intersects it in fifteen. Authors and affiliations follow version 2.}
+\end{frame}
+% Manuscript: Story roadmap
+\begin{frame}{Roadmap}
+\tableofcontents
+\note{Explain a sign game, count the optimum, count the intersection, then distinguish the complete theorem from its public formal consequence.}
+\end{frame}
+\section{Rules}
+% Manuscript: Section 1, definitions
+\begin{frame}{A sign-filling problem}
+\begin{itemize}
+\item Put $+1$ or $-1$ at each point, consistently across lines.
+\item Each three-point line prescribes a product sign.
+\item $d(C)$: the fewest failed lines among all assignments.
+\end{itemize}
+\begin{block}{A concrete example}
+$XX,ZZ,YY$ commute, yet $(XX)(ZZ)(YY)=-I$.
+\end{block}
+\note{$I$ is the identity; $XI$ means $X$ on the first qubit. No matrix background is needed. A predetermined value cannot change when the point occurs in a different context.}
+\end{frame}
+% Manuscript: Corollary 5, square parity
+\begin{frame}{Six rules cannot all hold}
+\[
+\begin{array}{ccc}XII&IXI&XXI\\IZI&ZII&ZZI\\XZI&ZXI&YYI\end{array}
+\]
+Rows and the first two columns have product $+I$; the last column has $-I$.
+\begin{itemize}
+\item Every point occurs twice in the six rules.
+\item Multiplying left sides gives $+1$; right sides give $-1$.
+\end{itemize}
+At least one line must fail.
+\note{Each row and column is a commuting context. The contradiction concerns a single assignment satisfying all six. This proves one unavoidable failure, not yet the full two-qubit minimum of three.}
+\end{frame}
+% Manuscript: Section 1, Theorem 1
+\begin{frame}{The conjecture and the answer}
+Saniga et al.'s Section 4.4 generalization would require
+\[d(C)=|C\cap H|\]
+for some classical hexagon $H$, for every contextual $C$.
+\begin{bookresult}{thm-perp}
+For every nonzero three-qubit pole $p$, $C_p$ has 31 points, 75 lines and degree 12. If $H$ has three isotropic lines at each of all 63 points, $|C_p\cap H|=15$. Every classical hexagon meets this condition, so equality fails.
+\end{bookresult}
+\note{$C_p$ contains all lines among the labels commuting with $p$, including lines not through $p$. The pole-line-only family has degree zero. This is the complete manuscript theorem with written proof; the formal negation later is narrower.}
+\end{frame}
+\section{Degree}
+% Manuscript: Lemma 3, Tables 1 and 2
+\begin{frame}{Why the base minimum is three}
+The full two-qubit geometry has 15 points and 15 lines.
+\begin{bookresult}{lem-doily}
+$d_2=3$.
+\end{bookresult}
+\begin{itemize}
+\item All $+1$: exactly three negative lines fail, so $d_2\le3$.
+\item Ten contradictory grids each need a failed line.
+\item Each line is in four grids: $4k\ge10$, hence $k\ge3$.
+\end{itemize}
+\note{Credit the known doily value to Saniga et al. This paper gives an explicit ten-grid certificate. Integrality turns $k\ge2.5$ into $k\ge3$. The complete tables are in the reading appendix.}
+\end{frame}
+% Manuscript: Proposition 2, coordinate pole
+\begin{frame}{One base line, four lifts}
+At pole $IIZ$, write $(u,t)$ for $P_u\otimes Z^t$.
+\[
+\{(0,1),(u,0),(u,1)\},\quad u\ne0,
+\]
+are positive pole lines. Other lines are the four lifts
+\[
+\{(u,a),(v,b),(u+v,a+b)\},\quad a,b\in\mathbb F_2.
+\]
+\begin{itemize}
+\item Lifts preserve the base sign.
+\item $31=1+2\cdot15$; $75=15+4\cdot15$.
+\item Copy a base optimum: $d(C_{IIZ})\le4\cdot3=12$.
+\end{itemize}
+\note{Addition is modulo two. The third lift coordinate is determined by the first two. The appended $Z$ factors multiply to $I$, so all four signs equal the base sign. Give the pole value $+1$.}
+\end{frame}
+% Manuscript: Proposition 2, lower bound
+\begin{frame}{Sixteen sections rule out fewer failures}
+Choose $(u,\lambda(u))$, with $\lambda:V_2\to\mathbb F_2$ linear.
+\begin{itemize}
+\item Sixteen sections, each a full two-qubit geometry.
+\item Each section has at least three failed lines.
+\item Each non-pole line occurs in four sections; pole lines in none.
+\end{itemize}
+For $N$ failed non-pole lines,
+\[4N\ge16\cdot3,\qquad N\ge12.\]
+The lower bound meets the upper bound.
+\note{A lifted line fixes the functional on two independent vectors. Two free values remain, giving four sections. Linearity ensures each section preserves all base lines. Pole lines contribute no section incidences.}
+\end{frame}
+% Manuscript: Proposition 2, signed Clifford transport
+\begin{frame}{The general formula and sign correction}
+\begin{bookresult}{prop-lift}
+For $n\ge2$ and $p\ne0$, $d(C_p^{(n)})=4d_{n-1}$.
+\end{bookresult}
+With $m=n-1$: $2^{2m}$ sections, multiplicity $2^{2m-2}$.
+\[
+\begin{aligned}
+UP_vU^\dagger&=(-1)^{\tau(v)}P_{gv},\\
+f'(gv)&=f(v)+\tau(v).
+\end{aligned}
+\]
+Corrections preserve failures while moving the pole.
+At $n=2$, $d_1=0$; four-qubit perps have degree 252.
+\note{The left side is a perp degree, not the full-space degree $d_n$. Credit signed transport to Li, Gupta and Ganesh, Lemma 3. The number of negative canonical lines can change with the pole. Use the known full-space $d_3=63$ to obtain $4\cdot63=252$.}
+\end{frame}
+\section{Intersection}
+% Manuscript: Theorem 1, intersection proof
+\begin{frame}{The second count forces fifteen}
+$S_p$ has 31 points; every line meets it in one or three.
+\begin{itemize}
+\item Three lines per point imply $H$ has 63 lines.
+\item Counting at $S_p$ gives $31\cdot3=93$ incidences.
+\end{itemize}
+Put $k=|C_p\cap H|$. Then
+\[93=3k+(63-k),\qquad k=15.\]
+\begin{block}{The obstruction}
+$12=d(C_p)<|C_p\cap H|=15$ for every candidate.
+\end{block}
+\note{The one-or-three property comes from the kernel of a binary functional on a two-dimensional space. Only isotropy and three-regularity are used; no extra hexagon conditions enter this count.}
+\end{frame}
+% Manuscript: Corollary 5
+\begin{frame}{Nineteen lines also suffice}
+\begin{bookresult}{cor-small}
+There exists a 19-line family $C$ with $d(C)=1$ and $|C\cap H|\ge3$ for every three-regular isotropic line family $H$ on all 63 points.
+\end{bookresult}
+\begin{itemize}
+\item Fifteen lines through $XII$, plus six square lines, overlap in two.
+\item $15+6-2=19$; all $+1$ fails exactly one line.
+\item Square parity forces at least one failure.
+\item All three $H$-lines through $XII$ lie in the union.
+\end{itemize}
+\note{This construction is independent of the general fourfold formula and makes no minimum-size claim. The hypothesis on $H$ concerns every one of the 63 ambient points.}
+\end{frame}
+\section{Scope}
+% Manuscript: Section 4, public Lean declaration
+\begin{frame}{The exact public formal conclusion}
+Candidates $H$: isotropic, three lines per point, no ordinary triangles, locally planar.
+\begin{bookresult}{thm-negation}
+It is false that every $C\subseteq\mathcal L_3$ with $d(C)>0$ admits such an $H$ with $d(C)=|C\cap H|$.
+\end{bookresult}
+The formal proof uses $IIZ$ and the chain
+\[0<d(C)\le12<15\le|C\cap H|.\]
+Exact values, the general formula and the 19-line construction retain their written proofs.
+\note{Local planarity means points on two lines through the same point are orthogonal. Every genuine classical embedding meets these conditions; no converse is asserted. The formal block states the negation, not all exact witness properties.}
+\end{frame}
+% Manuscript: Section 3, surviving upper bound
+\begin{frame}{The surviving bound and the next question}
+Holweck et al. proved classical hexagon complements satisfiable, giving
+\[d(C)\le|C\cap H|.\]
+\begin{itemize}
+\item Here it is strict for every classical embedding.
+\item Established special configurations retain their results.
+\item Skew-hexagon complements and the full four-qubit geometry are outside this argument.
+\end{itemize}
+\begin{block}{Next question}
+Which additional hypotheses restore equality?
+\end{block}
+\note{A satisfying complement assignment can fail only on the intersection. Li et al.'s degree-315 four-qubit hyperbolic quadric is a separate result, distinct from the degree-252 perp here.}
+\end{frame}
+\appendix
+\section{Appendix}
+% Manuscript: Corollary 4
+\begin{frame}{When is an assignment optimal?}
+\begin{bookresult}{cor-optimal}
+An assignment on $C_{IIZ}$ is optimal iff all 15 pole lines are satisfied and each of the 16 sections has exactly three failures.
+\end{bookresult}
+\[16\cdot3\le\text{section--failure incidences}\le4\cdot12.\]
+Both ends equal 48, forcing the two conditions.
+Conversely, $48/4=12$ failures attain the minimum.
+\note{This is the equality case of the section lower bound. A failed pole line would leave fewer than twelve non-pole failures, insufficient for 48 incidences.}
+\end{frame}
+% Manuscript: Sections 1 and 2, general notation
+\begin{frame}{Notation for the general count}
+\[
+V_n=(\mathbb F_2^2)^n,\quad B(u,v)=\sum_{j=1}^{n}(x_jz'_j+z_jx'_j).
+\]
+\[P_v=\bigotimes_{j=1}^{n}i^{x_jz_j}X^{x_j}Z^{z_j}.\]
+\begin{itemize}
+\item Lines: $\{u,v,u+v\}$, $u,v\ne0$, $u\ne v$, $B(u,v)=0$.
+\item $m=n-1\ge1$; a lifted line fixes two independent values.
+\item $2^{2m-2}N\ge2^{2m}d_m$; lifting an optimum reverses the bound.
+\item At $m=1$ the base has no lines and its degree is zero.
+\end{itemize}
+\note{All index bounds are displayed. The assignment sets are finite, so the minima are attained. There is no limiting passage. The reading gives the exhaustive line classification and signed assignment correspondence.}
+\end{frame}
+% Manuscript: Bibliography
+\begin{frame}{References}
+\small
+\begin{itemize}
+\item Haobo Ma, Wenlin Zhang (2026), version 2.\newline
+\href{https://doi.org/10.5281/zenodo.23904468}{DOI: 10.5281/zenodo.23904468}.
+\item M. Saniga et al., \emph{Hexagons govern three-qubit contextuality}, Quantum 9 (2025), 1601.\newline
+\href{https://arxiv.org/abs/2312.07738v3}{arXiv:2312.07738v3}, Section 4.4, p.20.
+\item F. Holweck, H. de Boutray, M. Saniga, Scientific Reports 12 (2022), 8915.
+\item A. Muller et al., MSCS 34 (2024), 322--343.
+\item Z. Li, A. Gupta, V. Ganesh, \href{https://arxiv.org/abs/2610.26465v1}{arXiv:2610.26465v1} (2026).
+\end{itemize}
+\note{Full titles, DOIs and exact attribution appear in the reading appendix. The exact version DOI identifies the paper and its proof.}
+\end{frame}
+% Manuscript: Formal scope, generated source-linked ledger
+\FormalVerification
+\end{document}

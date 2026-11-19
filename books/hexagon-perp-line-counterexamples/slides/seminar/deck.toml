@@ -1,0 +1,13 @@
+kind = "academic"
+editions = ["zh", "en"]
+aspect = "4:3"
+structure_colour = "#0e2c8e"
+short_author = "H. Ma, W. Zhang"
+short_title = "12 versus 15"
+institution = "Haobo Ma: ChronoAI Pte Ltd, Singapore. Wenlin Zhang: National University of Singapore and ChronoAI Pte Ltd, Singapore."
+date = "Version 2 (2026)"
+navigation_symbols = false
+
+[title]
+zh = "为什么 12 不等于 15：一个量子情境性反例"
+en = "Twelve versus fifteen: a contextuality counterexample"
